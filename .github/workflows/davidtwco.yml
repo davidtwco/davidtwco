@@ -1,0 +1,46 @@
+name: davidtw.co
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+    
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Typst
+        run: cargo install --locked typst-cli
+
+      - name: Build curriculum vitae
+        run: |
+          typst compile ./curriculum-vitae/curriculum-vitae.typ --font-path ./fonts ./web/cv.pdf
+          cp ./web/cv.pdf ./web/curriculum-vitae.pdf 
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'web'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
