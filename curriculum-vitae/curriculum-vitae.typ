@@ -16,7 +16,7 @@
         ]
       },
       align(center)[#(name)'s Curriculum Vitae],
-      align(right, counter(page).display()),
+      align(right, context(counter(page).display())),
     )
   ],
   margin: (
@@ -270,14 +270,6 @@
   subtitle: "Nuffield Foundation Placement",
   location: "Glasgow, Scotland",
   period: "May 2014 - Jul 2024"
-)[]
-
-= Memberships
-#exp(
-  title: "Open Source Initiative",
-  subtitle: "Individual Membership",
-  location: "",
-  period: "Feb 2020 - Present"
 )[]
 
 = Awards
