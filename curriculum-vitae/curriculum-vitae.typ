@@ -112,6 +112,15 @@
 
 = Open Source
 #exp(
+  title: "Rust Foundation",
+  subtitle: "Board Member",
+  location: "",
+  period: "Oct 2025 - Present",
+)[
+  Representing the Rust Project as a Project Director on the Rust Foundation's Board.
+]
+
+#exp(
   title: "Rust Programming Language",
   subtitle: "Compiler Team Co-Lead",
   location: "",
