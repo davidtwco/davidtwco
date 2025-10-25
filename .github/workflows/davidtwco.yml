@@ -33,7 +33,7 @@ jobs:
 
       - name: Build curriculum vitae
         run: |
-          typst compile ./curriculum-vitae/curriculum-vitae.typ --font-path ./fonts ./web/cv.pdf
+          typst compile ./curriculum-vitae/curriculum-vitae.typ --font-path ./curriculum-vitae/fonts ./web/cv.pdf
           cp ./web/cv.pdf ./web/curriculum-vitae.pdf 
 
       - name: Upload artifact
