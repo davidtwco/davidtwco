@@ -283,6 +283,13 @@
 
 = Awards
 #exp(
+  title: link("https://openuk.uk/awards/")[Individual Category - Runner-up],
+  subtitle: "OpenUK Awards 2025",
+  location: "London, UK",
+  period: "Dec 2025"
+)[]
+
+#exp(
   title: link("https://www.sigplan.org/Awards/Software/")[Programming Languages Software Award],
   subtitle: "ACM SIGPLAN",
   location: "Copenhagen, Denmark",
