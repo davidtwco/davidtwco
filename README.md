@@ -12,7 +12,7 @@ Feel free to contact me by email at [`hello@davidtw.co`][email], on [Mastodon][m
 [borrowed]: https://borrowed.dev
 [bluesky]: https://bsky.app/profile/davidtw.co
 [compiler_team]: https://www.rust-lang.org/governance/teams/compiler
-[cv]: https://davidtw.co/cv.pdf
+[cv]: https://davidtwco.github.io/davidtwco/cv.pdf
 [email]:  mailto:hello@davidtw.co
 [foundation]: https://rustfoundation.org/
 [linkedin]: https://www.linkedin.com/in/davidtwco/
