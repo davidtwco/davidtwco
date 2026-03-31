@@ -42,11 +42,18 @@
 
 #let title(
   name: "",
-  subtitles: ()
+  subtitles: (),
+  contacts: ()
 ) = {
   align(center)[
     #block(text(weight: "light", 2.5em, name))
-    #subtitles.join(" · ")
+    #grid(
+      columns: (auto),
+      row-gutter: 3mm,
+      subtitles.join(" · "),
+      text(size: 8pt, fill: gray, contacts.join(" · ")),
+    )
+
   ]
 }
 
@@ -102,8 +109,11 @@
 #title(
   name: name,
   subtitles: (
-    "Software Engineer",
+    "Principal Software Engineer",
+    "Open Source Maintainer",
     "Edinburgh, Scotland",
+  ),
+  contacts: (
     link("mailto:hello@davidtw.co")[hello#(sym.at)davidtw.co],
     link("https://davidtw.co")[https://davidtw.co],
     link("https://github.com/davidtwco")[#(sym.at)davidtwco],
@@ -112,12 +122,22 @@
 
 = Open Source
 #exp(
-  title: "Rust Foundation",
-  subtitle: "Board Member",
+  title: "Rust Foundation / Rust Programming Language",
+  subtitle: "Board Member / Project Director",
   location: "",
   period: "Oct 2025 - Present",
 )[
-  Representing the Rust Project as a Project Director on the Rust Foundation's Board.
+  As board member representing the Rust Project to the Rust Foundation, I'm responsible for
+  ensuring the Foundation is serving the needs of the Rust Project and its members. This involves
+  working closely with the Foundation's executive staff to ensure the Foundation is well-informed
+  of the views and priorities of the Rust Project's leadership council and members. In addition, I
+  provide regular updates to the other members of the Foundation's board on developments within the
+  Rust Project.
+
+  In addition, within the Rust Project as a _Project Director_, I'm responsible for ensuring that
+  the Project's relationship with the Foundation is healthy and productive; that the Project is
+  aware of the needs, views and priorities of the Foundation; and that the Foundation's ongoing
+  efforts within the project are successful.
 ]
 
 #exp(
@@ -132,13 +152,16 @@
   authoring communication on behalf of the team; and supporting compiler team members in their
   contributions.
 
-  Since becoming co-lead, I have #link("https://borrowed.dev/p/priorities-plans-and-backlogs")[
-  created a roadmap for my term as co-lead based on team member feedback], landed an RFC to
+  Since becoming co-lead, I have landed an RFC to
   #link("https://github.com/rust-lang/rfcs/pull/3599")[restructure the compiler team], improved
-  review queue capacity, and written about the team's
-  #link("https://borrowed.dev/p/on-ongoing-work-in-the-rust-compiler-team")[ongoing work],
-  #link("https://borrowed.dev/p/priorities-plans-and-backlogs")[review queue], and the
-  #link("https://borrowed.dev/p/priorities-plans-and-backlogs")[project's structure].
+  review queue capacity, improved our documentation (especially with regards to our processes and
+  policies), ran regular triage meetings, and ensured the team's well-functioning.
+
+  I've also written about the team's
+  #link("https://davidtw.co/posts/on-ongoing-work-in-the-rust-compiler-team")[ongoing work],
+  #link("https://davidtw.co/posts/on-compiler-team-membership-part-i")[membership],
+  #link("https://davidtw.co/posts/on-the-compiler-teams-review-queue")[review queue], and the 
+  #link("https://davidtw.co/posts/on-the-shape-of-the-rust-project")[overall structure of the project].
 ]
 
 #exp(
@@ -153,16 +176,16 @@
 
   I regularly contribute bug fixes, diagnostic improvements and refactorings; as well as lead or
   contribute to engineering efforts to implement new features in the Rust compiler. Since starting
-  to contribute to Rust, I have been involved in various working groups, including: async/await,
-  diagnostics, debuginfo, meta, polymorphization and non-lexical lifetimes.
+  to contribute to Rust, the projects I have worked on include non-lexical lifetimes, split
+  debuginfo, `#[non_exhaustive]`, diagnostics, scalable vectors, and build-std.
 ]
 
 = Work Experience
 #exp(
   title: "Arm Holdings plc",
-  subtitle: "Staff Software Engineer, Rust Team Lead",
+  subtitle: "Principal Software Engineer",
   location: "Edinburgh, Scotland",
-  period: "September 2024 - Present"
+  period: "Apr 2026 - Present"
 )[
   Within the Rust team at Arm, we contribute improved Arm platform support to the upstream Rust
   project and ecosystem, prioritising requests from our partners with Rust workloads; and perform
@@ -172,7 +195,7 @@
   #list(
     [mentoring and line management of team members, helping them achieve their goals and succeed
      in the team and company],
-    [the team's relationship with the upstream Rust project, building community consensus around our
+    [the team's relationship with the upstream Rust Project, building community consensus around our
      objectives and owning Arm's commitments to upstream],
     [representing Arm within the Rust community at conferences and upstream project events],
     [planning the team's work, establishing and communicating our priorities and roadmap to
@@ -181,15 +204,22 @@
     [sharing Rust knowledge and expertise internally],
     [my own engineering contributions to our ongoing projects, such as
      #link("https://github.com/rust-lang/rfcs/pull/3729")[extending the language to be able to
-     support the Arm scalable vector extension]],
+     support Arm's Scalable Vector Extension (SVE)]],
   )
 ]
+
+#exp(
+  title: "Arm Holdings plc",
+  subtitle: "Staff Software Engineer",
+  location: "Edinburgh, Scotland",
+  period: "Sep 2024 - Apr 2026"
+)[]
 
 #exp(
   title: "Huawei Technologies Research & Development UK Ltd.",
   subtitle: "Senior Software Engineer A, Programming Languages Lab",
   location: "Edinburgh, Scotland",
-  period: "November 2022 - August 2024"
+  period: "Nov 2022 - Aug 2024"
 )[
   Within the Central Software Institute of Huawei R&D, I leveraged my Rust experience to accelerate
   and guarantee Rust's successful adoption, involving:
@@ -200,8 +230,8 @@
     [directly working with internal customers to recognise Rust opportunities, advising and
      assisting teams adopting Rust, and identifying and prioritizing requirements for upstream
      contributions],
-    [supporting HQ colleagues in maintaining the internal toolchain],
-    [knowledge sharing of Rust compiler internals],
+    [supporting HQ colleagues in maintaining the internal toolchain and knowledge sharing of Rust
+     compiler internals],
     [participation in Huawei's Technical Management Committee to define internal coding standards
      for Rust],
     [internally representing the Edinburgh Research Centre within Huawei by promoting my work in
@@ -223,41 +253,14 @@
 
 #exp(
   title: "Codeplay Software Ltd.",
-  subtitle: "Senior Software Engineer, Infrastructure",
+  subtitle: "Senior Software Engineer",
   location: "Edinburgh, Scotland",
   period: "Nov 2020 - Aug 2021"
-)[
-  I was the primary maintainer of Codeplay's continuous integration infrastructure and led the
-  effort to rebuild the core infrastructure with NixOps to improve reproducibility.
-
-  In addition, I worked as a compiler engineer on SYCL support for NVIDIA GPUs which was contributed
-  to Intel's DPC++. I implemented driver support in Clang for the `nvptx64-nvidia-nvcl-sycldevice`
-  target, target-specific passes in LLVM, builtins in libclc, and various bug fixes to LLVM, Clang
-  and the LLVM-SPIRV translator.
-]
-
-#exp(
-  title: "Codeplay Software Ltd.",
-  subtitle: "Software Engineer, Infrastructure",
-  location: "Edinburgh, Scotland",
-  period: "Sep 2017 - Nov 2020"
 )[]
-
-#exp(
-  title: "Codeplay Software Ltd.",
-  subtitle: "Intern Build Engineer",
-  location: "Edinburgh, Scotland",
-  period: "May 2017 - Sep 2017"
-)[
-  I rebuilt the Codeplay's continuous integration infrastructure during my internship - introducing
-  automated re-provisioning of build nodes and improving configuration management, reducing the
-  turn-around time of changes requested by engineering teams and downtime which impacted
-  engineering productivity.
-]
 
 #prev(
   title: [Earlier experience available #link("https://www.linkedin.com/in/davidtwco/")[on LinkedIn]],
-  period: "Jun 2014 - Jun 2016, Apr 2015 - Feb 2017, Sep 2018 - Nov 2018"
+  period: "Jun 2014 - Jun 2016, Apr 2015 - Feb 2017, May 2017 - Sep 2017, Sep 2018 - Nov 2018, Sep 2017 - Nov 2020"
 )
 
 = Education
@@ -297,6 +300,13 @@
 )[]
 
 = Conference Speaking
+#exp(
+  title: "Rust Nation UK",
+  subtitle: "Extending Rust's notions of sizedness",
+  location: "London, UK",
+  period: "Feb 2026"
+)[]
+
 #exp(
   title: "QCon",
   subtitle: "Split DWARF in rustc",
